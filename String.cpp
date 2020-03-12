@@ -4,4 +4,8 @@
  * Date     : 12.03.2020
  */
 
-#include "cstring.h"
+#include "String.h"
+
+String::String() {
+    
+}

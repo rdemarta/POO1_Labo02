@@ -5,8 +5,14 @@
  */
 
 #include <iostream>
+#include "String.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    String s;
+
+    printf("Test : %s \n", s.getString());
+
     return 0;
 }
