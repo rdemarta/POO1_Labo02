@@ -15,7 +15,7 @@ class String {
 private:
 
     char* values;
-    size_t _length;
+    size_t _length = 0;
 
 
 public:
@@ -34,7 +34,7 @@ public:
 
     explicit String(bool b);
 
-    ~String();
+    virtual ~String();
 
 
 
