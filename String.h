@@ -20,6 +20,11 @@ private:
 
     static const char END_CHAR = '\0';
 
+    constexpr static const char* const TRUE = "true";
+    static const size_t TRUE_LENGTH = 4;
+    constexpr static const char* const FALSE = "false";
+    static const size_t FALSE_LENGTH = 4;
+
 public:
 
     explicit String();

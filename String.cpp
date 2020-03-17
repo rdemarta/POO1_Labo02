@@ -39,19 +39,13 @@ String::String(int i) {
     values = new char[_length];
 
     sprintf(values, "%d", i);
-
-    /*
-    // Using st::string
-    string str = to_string(i);
-    _length = to_string(i).length();
-
-    values = new char[_length + 1];
-    std::copy(str.begin(), str.end(), values);
-
-    values[_length] = END_CHAR;
-     */
 }
 
+String::String(bool b) {
+    _length = b ? TRUE_LENGTH : FALSE_LENGTH;
+    values = new char[_length + 1];
+    strcpy(values, b ? TRUE : FALSE);
+}
 
 String::~String() {
     delete values;
