@@ -6,6 +6,9 @@
 
 #include "String.h"
 #include <cstring>
+#include <iostream>
+
+using namespace std;
 
 String::String() {
     values = new char[1];
@@ -39,4 +42,12 @@ String::~String() {
 
 size_t String::length() const {
     return _length;
+}
+
+const char* String::getString() const {
+    return values;
+}
+
+ostream& operator<<(ostream& os, const String& str){
+    return os << str.values;
 }

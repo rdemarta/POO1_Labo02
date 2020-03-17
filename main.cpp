@@ -17,11 +17,13 @@ int main() {
     String s2(test);
     String s3(s2);
     String s4(c);
+    const char* s2AsConstChar = s2.getString();
 
-    cout << "s1 (" << s1.length() << ")" << endl;
-    cout << "s2 (" << s2.length() << ")" << endl;
-    cout << "s3 (" << s3.length() << ")" << endl;
-    cout << "s4 (" << s4.length() << ")" << endl;
+    cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
+    cout << "s2 : " << s2 << " (" << s2.length() << ")" << endl;
+    cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
+    cout << "s3 : " << s3 << " (" << s3.length() << ")" << endl;
+    cout << "s4 : " << s4 << " (" << s4.length() << ")" << endl;
 
     return 0;
 }

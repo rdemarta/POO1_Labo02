@@ -9,6 +9,7 @@
 
 
 #include <cstdlib>
+#include <iostream>
 
 class String {
 
@@ -49,6 +50,8 @@ public:
     bool equals(const String& str) const;
 
     String& operator=(const String& str);
+
+    friend std::ostream& operator<<(std::ostream& os, const String& str);
 
 
 
