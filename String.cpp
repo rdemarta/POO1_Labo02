@@ -48,6 +48,10 @@ const char* String::getString() const {
     return values;
 }
 
+char& String::at(size_t index) const{
+    return values[index];
+}
+
 ostream& operator<<(ostream& os, const String& str){
     return os << str.values;
 }

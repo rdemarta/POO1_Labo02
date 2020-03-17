@@ -19,11 +19,20 @@ int main() {
     String s4(c);
     const char* s2AsConstChar = s2.getString();
 
+    cout << "Constructors" << endl;
     cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
     cout << "s2 : " << s2 << " (" << s2.length() << ")" << endl;
-    cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
     cout << "s3 : " << s3 << " (" << s3.length() << ")" << endl;
     cout << "s4 : " << s4 << " (" << s4.length() << ")" << endl;
+
+    cout << endl << "Display as const char*" << endl;
+    cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
+
+    cout << endl << "Modify String with at()" << endl;
+    char& s2Char = s2.at(0);
+    cout << s2 << endl;
+    s2Char = 'C';
+    cout << s2 << endl;
 
     return 0;
 }
