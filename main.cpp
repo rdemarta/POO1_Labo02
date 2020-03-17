@@ -18,8 +18,10 @@ int main() {
     String s3(s2);
     String s4(c);
 
-    cout << "stop" << endl;
-
+    cout << "s1 (" << s1.length() << ")" << endl;
+    cout << "s2 (" << s2.length() << ")" << endl;
+    cout << "s3 (" << s3.length() << ")" << endl;
+    cout << "s4 (" << s4.length() << ")" << endl;
 
     return 0;
 }

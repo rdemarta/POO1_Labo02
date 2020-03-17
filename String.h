@@ -38,7 +38,7 @@ public:
 
 
 
-    size_t length();
+    size_t length() const;
 
     const char* getString() const;
 

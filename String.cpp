@@ -34,3 +34,9 @@ String::String(char c) {
 String::~String() {
     delete values;
 }
+
+
+
+size_t String::length() const {
+    return _length;
+}
