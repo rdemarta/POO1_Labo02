@@ -18,6 +18,7 @@ private:
     char* values;
     size_t _length = 0;
 
+    static const char END_CHAR = '\0';
 
 public:
 
@@ -53,7 +54,13 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
 
-
+    /**
+     * Counts number of digits of an int (including "-" sign if < 0).
+     * @param i
+     * @return
+     */
+    static size_t countDigit(int i);
+private:
 
 
 
