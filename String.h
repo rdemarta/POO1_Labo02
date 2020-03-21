@@ -31,7 +31,7 @@ public:
 
     explicit String(const char* str);
 
-    explicit String(const String& str);
+    String(const String& str); // TODO ? Had to remove 'explicit' keyword because of operator+()
 
     explicit String(char c);
 
@@ -59,15 +59,17 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
 
+    String& operator+=(const String& rhs);
+    friend String operator+(String lhs, const String& rhs);
+
+private:
+
     /**
      * Counts number of digits of an int (including "-" sign if < 0).
      * @param i
      * @return
      */
     static size_t countDigit(int i);
-private:
-
-
 
 };
 

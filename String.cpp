@@ -52,7 +52,6 @@ String::~String() {
 }
 
 
-
 size_t String::length() const {
     return _length;
 }
@@ -67,6 +66,16 @@ char& String::at(size_t index) const{
 
 ostream& operator<<(ostream& os, const String& str){
     return os << str.values;
+}
+
+String& String::operator+=(const String& rhs) {
+    strcat(values, rhs.values);
+    return *this;
+}
+
+String operator+(String lhs, const String& rhs) {
+    lhs += rhs;
+    return lhs;
 }
 
 size_t String::countDigit(int i) {
