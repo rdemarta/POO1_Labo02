@@ -48,11 +48,11 @@ int main() {
     cout << "s3 (" << s3 << ") += \"END\" : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
 
     // Affectation operator
-    String t = s2;
+    s3 = s2;
 
     cout << endl << "Test equals" << endl;
     cout << boolalpha << "s6 (" << s6 << ") is equals to \"false\" ? " << s6.equals("false") << endl;
-    cout << boolalpha << "s2 (" << t << ") is equals to s2 (" << t << ") ? " << t.equals(s2) << endl;
+    cout << boolalpha << "s3 (" << s3 << ") is equals to s2 (" << s2 << ") ? " << s3.equals(s2) << endl;
 
     delete subStr;
 

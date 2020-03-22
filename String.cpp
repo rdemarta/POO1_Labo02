@@ -136,6 +136,17 @@ bool String::equals(const char *str) const {
     return isEqual;
 }
 
+String& String::operator=(const String& str) {
+    // Both object must be different to do the copy
+    if(this != &str) {
+        String newString(str);
+        swap(_length, newString._length);
+        swap(values, newString.values);
+    }
+
+    return *this;
+}
+
 
 
 size_t String::countDigit(int i) {
