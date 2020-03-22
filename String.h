@@ -51,6 +51,14 @@ public:
 
     char& at(size_t index) const;
 
+    /**
+     * Extract a new substring of range [start, end[
+     * @param start
+     * @param end
+     * @return
+     */
+    const char* subString(size_t start, size_t end) const;
+
     bool equals(const char* str) const;
 
     bool equals(const String& str) const;

@@ -20,6 +20,7 @@ int main() {
     String s5(-42);
     String s6(true);
     const char* s2AsConstChar = s2.getString();
+    const char* subStr = s6.subString(1, 2); // "ru"
 
     cout << "Constructors" << endl;
     cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
@@ -31,12 +32,15 @@ int main() {
 
     cout << endl << "Display as const char*" << endl;
     cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
+    cout << "s6 substring [1;2] : " << subStr << endl;
 
     cout << endl << "Modify String with at()" << endl;
     char& s2Char = s2.at(0);
     cout << s2 << endl;
     s2Char = 'C';
     cout << s2 << endl;
+
+    delete subStr;
 
     return 0;
 }

@@ -12,7 +12,7 @@ using namespace std;
 
 String::String() {
     values = new char[1];
-    values[0] = '\0';
+    values[0] = END_CHAR;
 }
 
 String::String(const char *str){
@@ -62,6 +62,19 @@ const char* String::getString() const {
 
 char& String::at(size_t index) const{
     return values[index];
+}
+
+const char* String::subString(size_t start, size_t end) const {
+    if(start > end || start >= _length || end >= _length)
+        throw out_of_range("start/end bounds are out of range or incoherent.");
+
+    size_t subLength = end - start + 1;
+
+    char* subStr = new char[subLength + 1];
+    strncpy(subStr, values + start, subLength);
+    subStr[subLength] = END_CHAR; // Must terminate String manually because values' END_CHAR may not be copied (range copy)
+
+    return subStr;
 }
 
 ostream& operator<<(ostream& os, const String& str){
