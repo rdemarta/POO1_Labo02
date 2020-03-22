@@ -70,6 +70,9 @@ public:
     String& operator+=(const String& rhs);
     friend String operator+(String lhs, const String& rhs);
 
+    String& append(const String& str);
+    String& append(const char* str);
+
 private:
 
     /**

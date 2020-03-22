@@ -82,14 +82,32 @@ ostream& operator<<(ostream& os, const String& str){
 }
 
 String& String::operator+=(const String& rhs) {
-    strcat(values, rhs.values);
-    return *this;
+    return append(rhs);
 }
 
 String operator+(String lhs, const String& rhs) {
     lhs += rhs;
     return lhs;
 }
+
+String& String::append(const String& str) {
+    return append(str.getString());
+}
+
+String& String::append(const char* str) {
+    _length = this->length() + strlen(str); // Update the length with both String
+    char* tmp = values;
+    values = new char[_length + 1]; // Allocate the new values
+
+    // Put all values into values and concat the new str
+    strcpy(values, tmp);
+    strcat(values, str);
+
+    return *this;
+}
+
+
+
 
 size_t String::countDigit(int i) {
     size_t count = i <= 0 ? 1 : 0;
