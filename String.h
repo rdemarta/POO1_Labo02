@@ -19,11 +19,7 @@ private:
     size_t _length = 0;
 
     static const char END_CHAR = '\0';
-
-    constexpr static const char* const TRUE = "true";
-    static const size_t TRUE_LENGTH = 4;
-    constexpr static const char* const FALSE = "false";
-    static const size_t FALSE_LENGTH = 4;
+    static const unsigned DECIMAL_PRECISION = 6;
 
 public:
 
@@ -43,12 +39,23 @@ public:
 
     virtual ~String();
 
-
-
+    /**
+     * The number of characters in values
+     * @return
+     */
     size_t length() const;
 
+    /**
+     * Get a char* representation of String
+     * @return
+     */
     const char* getCharArray() const;
 
+    /**
+     * Get a reference to the char at position index
+     * @param index
+     * @return
+     */
     char& at(size_t index) const;
 
     /**
@@ -61,11 +68,17 @@ public:
 
     bool equals(const char* str) const;
 
+    /**
+     * Two String objects are considered equals if their values are equals (_lenmgth doesn't matter)
+     * @param str
+     * @return
+     */
     bool equals(const String& str) const;
 
     String& operator=(const String& str);
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
+    friend std::istream& operator>> (std::istream& is, String& str);
 
     String& operator+=(const String& rhs);
     String& operator+=(const char* rhs);

@@ -42,17 +42,16 @@ String::String(int i) {
 }
 
 String::String(double d) {
-    size_t intDigits = countDigit((int)d);
-    _length = intDigits + 7;
+    _length = countDigit((int)d) + DECIMAL_PRECISION + 1; // +1 is for the char '.'
     values = new char[_length + 1];
 
-    sprintf(values, "%f", d);
+    sprintf(values, "%.*f", DECIMAL_PRECISION, d);
 }
 
 String::String(bool b) {
-    _length = b ? TRUE_LENGTH : FALSE_LENGTH;
+    _length = b ? 4 : 5;
     values = new char[_length + 1];
-    strcpy(values, b ? TRUE : FALSE);
+    strcpy(values, b ? "true" : "false");
 }
 
 String::~String() {
@@ -87,6 +86,16 @@ const char* String::subString(size_t start, size_t end) const {
 
 ostream& operator<<(ostream& os, const String& str){
     return os << str.values;
+}
+
+istream& operator>>(std::istream& is, String& str) {
+    cout << "_____gcount" << is.gcount() << endl;
+
+    // TODO update _length
+
+    is >> str.values;
+    str._length += (size_t)(is.gcount());
+    return is;
 }
 
 String& String::operator+=(const String& rhs) {
@@ -154,8 +163,6 @@ String& String::operator=(const String& str) {
 
     return *this;
 }
-
-
 
 size_t String::countDigit(int i) {
     size_t count = i <= 0 ? 1 : 0;
