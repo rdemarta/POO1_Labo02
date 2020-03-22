@@ -44,8 +44,15 @@ int main() {
     cout << "s3 (" << s3 << ") append s6 (" << s6 << ") : " << s3.append(s6) << " (" << s3.length() << ")" << endl;
     cout << "s3 (" << s3 << ") += s4 (" << s4 << ") : " << (s3 += s4) << " (" << s3.length() << ")" << endl;
     cout << "s3 (" << s3 << ") + s6 (" << s6 << ") : " << s3 + s6 << " (" << (s3 + s6).length() << ")" << endl;
-    cout << "s3 (" << s3 << ") + Hello : " << s3 + "Hello" << " (" << (s3 + "Hello").length() << ")" << endl;
-    cout << "s3 (" << s3 << ") += END : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
+    cout << "s3 (" << s3 << ") + \"Hello\" : " << s3 + "Hello" << " (" << (s3 + "Hello").length() << ")" << endl;
+    cout << "s3 (" << s3 << ") += \"END\" : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
+
+    // Affectation operator
+    String t = s2;
+
+    cout << endl << "Test equals" << endl;
+    cout << boolalpha << "s6 (" << s6 << ") is equals to \"false\" ? " << s6.equals("false") << endl;
+    cout << boolalpha << "s2 (" << t << ") is equals to s2 (" << t << ") ? " << t.equals(s2) << endl;
 
     delete subStr;
 

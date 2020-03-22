@@ -115,6 +115,26 @@ String& String::append(const char* str) {
     return *this;
 }
 
+bool String::equals(const String &str) const {
+    return equals(str.getString());
+}
+
+bool String::equals(const char *str) const {
+    bool isEqual = true;
+
+    if(_length != strlen(str)) {
+        isEqual = false;
+    }else {
+        for(size_t i = 0; i < _length; ++i){
+            if(values[i] != str[i]){
+                isEqual = false;
+                break;
+            }
+        }
+    }
+
+    return isEqual;
+}
 
 
 
