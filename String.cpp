@@ -85,7 +85,16 @@ String& String::operator+=(const String& rhs) {
     return append(rhs);
 }
 
+String& String::operator+=(const char* rhs){
+    return append(rhs);
+}
+
 String operator+(String lhs, const String& rhs) {
+    lhs += rhs;
+    return lhs;
+}
+
+String operator+(String lhs, const char* rhs) {
     lhs += rhs;
     return lhs;
 }

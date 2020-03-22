@@ -68,7 +68,9 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const String& str);
 
     String& operator+=(const String& rhs);
+    String& operator+=(const char* rhs);
     friend String operator+(String lhs, const String& rhs);
+    friend String operator+(String lhs, const char* rhs);
 
     String& append(const String& str);
     String& append(const char* str);

@@ -40,10 +40,12 @@ int main() {
     s2Char = 'C';
     cout << s2 << endl;
 
-    cout << endl << "Test concat / + / += " << endl;
-    cout << "s3 (" << s3 << ") append s6 (" << s6 << ") : " << s3.append(s6) << "(" << s3.length() << ")" << endl;
-    cout << "s3 (" << s3 << ") += s4 (" << s4 << ") : " << (s3 += s4) << "(" << s3.length() << ")" << endl;
-    cout << "s3 (" << s3 << ") + s6 (" << s6 << ") : " << s3 + s6 << "(" << (s3 + s6).length() << ")" << endl;
+    cout << endl << "Test concat, +, +=" << endl;
+    cout << "s3 (" << s3 << ") append s6 (" << s6 << ") : " << s3.append(s6) << " (" << s3.length() << ")" << endl;
+    cout << "s3 (" << s3 << ") += s4 (" << s4 << ") : " << (s3 += s4) << " (" << s3.length() << ")" << endl;
+    cout << "s3 (" << s3 << ") + s6 (" << s6 << ") : " << s3 + s6 << " (" << (s3 + s6).length() << ")" << endl;
+    cout << "s3 (" << s3 << ") + Hello : " << s3 + "Hello" << " (" << (s3 + "Hello").length() << ")" << endl;
+    cout << "s3 (" << s3 << ") += END : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
 
     delete subStr;
 
