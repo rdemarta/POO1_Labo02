@@ -19,6 +19,8 @@ int main() {
     String s4(c);
     String s5(-42);
     String s6(true);
+    String s7(123.456789);
+
     const char* s2AsConstChar = s2.getCharArray();
     const char* subStr = s6.subString(1, 2); // "ru"
 
@@ -29,6 +31,7 @@ int main() {
     cout << "s4 : " << s4 << " (" << s4.length() << ")" << endl;
     cout << "s5 : " << s5 << " (" << s5.length() << ")" << endl;
     cout << "s6 : " << s6 << " (" << s6.length() << ")" << endl;
+    cout << "s7 : " << s7 << " (" << s7.length() << ")" << endl;
 
     cout << endl << "Display as const char*" << endl;
     cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
