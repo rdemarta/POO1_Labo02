@@ -47,7 +47,7 @@ public:
 
     size_t length() const;
 
-    const char* getString() const;
+    const char* getCharArray() const;
 
     char& at(size_t index) const;
 

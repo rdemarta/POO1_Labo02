@@ -19,7 +19,7 @@ int main() {
     String s4(c);
     String s5(-42);
     String s6(true);
-    const char* s2AsConstChar = s2.getString();
+    const char* s2AsConstChar = s2.getCharArray();
     const char* subStr = s6.subString(1, 2); // "ru"
 
     cout << "Constructors" << endl;

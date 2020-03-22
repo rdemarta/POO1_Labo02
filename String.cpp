@@ -41,6 +41,14 @@ String::String(int i) {
     sprintf(values, "%d", i);
 }
 
+String::String(double d) {
+    size_t intDigits = countDigit((int)d);
+    _length = intDigits + 7;
+    values = new char[_length + 1];
+
+    sprintf(values, "%f", d);
+}
+
 String::String(bool b) {
     _length = b ? TRUE_LENGTH : FALSE_LENGTH;
     values = new char[_length + 1];
@@ -56,7 +64,7 @@ size_t String::length() const {
     return _length;
 }
 
-const char* String::getString() const {
+const char* String::getCharArray() const {
     return values;
 }
 
@@ -100,7 +108,7 @@ String operator+(String lhs, const char* rhs) {
 }
 
 String& String::append(const String& str) {
-    return append(str.getString());
+    return append(str.getCharArray());
 }
 
 String& String::append(const char* str) {
@@ -116,7 +124,7 @@ String& String::append(const char* str) {
 }
 
 bool String::equals(const String &str) const {
-    return equals(str.getString());
+    return equals(str.getCharArray());
 }
 
 bool String::equals(const char *str) const {
