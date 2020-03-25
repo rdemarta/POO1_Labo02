@@ -53,9 +53,13 @@ int main() {
     // Affectation operator
     s3 = s2;
 
-    cout << endl << "Test equals" << endl;
-    cout << boolalpha << "s6 (" << s6 << ") is equals to \"false\" ? " << s6.equals("false") << endl;
-    cout << boolalpha << "s3 (" << s3 << ") is equals to s2 (" << s2 << ") ? " << s3.equals(s2) << endl;
+    cout << endl << "Test == and !=" << endl;
+    cout << boolalpha << "s6 (" << s6 << ") == \"false\" ? " << (s6 == "false") << endl;
+    cout << boolalpha << "s6 (" << s6 << ") != \"false\" ? " << (s6 != "false") << endl;
+    cout << boolalpha << "s3 (" << s3 << ") == s2 (" << s2 << ") ? " << (s3 == s2) << endl;
+    cout << boolalpha << "s3 (" << s3 << ") != s2 (" << s2 << ") ? " << (s3 != s2) << endl;
+    cout << boolalpha << "\"true\" == s6 (" << s6 << ") ? " << ("true" == s6) << endl;
+    cout << boolalpha << "\"true\" != s6 (" << s6 << ") ? " << ("true" != s6) << endl;
 
     delete subStr;
 

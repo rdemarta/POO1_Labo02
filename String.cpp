@@ -116,6 +116,30 @@ String operator+(String lhs, const char* rhs) {
     return lhs;
 }
 
+bool String::operator==(const String& rhs){
+    return this->equals(rhs);
+}
+
+bool String::operator==(const char* rhs){
+    return this->equals(rhs);
+}
+
+bool operator==(const char* lhs, const String& rhs){
+    return rhs.equals(lhs);
+}
+
+bool String::operator!=(const String& rhs){
+    return !this->equals(rhs);
+}
+
+bool String::operator!=(const char* rhs){
+    return !this->equals(rhs);
+}
+
+bool operator!=(const char* lhs, const String& rhs){
+    return !rhs.equals(lhs);
+}
+
 String& String::append(const String& str) {
     return append(str.getCharArray());
 }

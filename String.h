@@ -66,15 +66,6 @@ public:
      */
     const char* subString(size_t start, size_t end) const;
 
-    bool equals(const char* str) const;
-
-    /**
-     * Two String objects are considered equals if their values are equals (_lenmgth doesn't matter)
-     * @param str
-     * @return
-     */
-    bool equals(const String& str) const;
-
     String& operator=(const String& str);
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
@@ -84,6 +75,12 @@ public:
     String& operator+=(const char* rhs);
     friend String operator+(String lhs, const String& rhs);
     friend String operator+(String lhs, const char* rhs);
+    bool operator==(const String& rhs);
+    bool operator==(const char* rhs);
+    friend bool operator==(const char* lhs, const String& rhs);
+    bool operator!=(const String& rhs);
+    bool operator!=(const char* rhs);
+    friend bool operator!=(const char* lhs, const String& rhs);
 
     String& append(const String& str);
     String& append(const char* str);
@@ -96,6 +93,15 @@ private:
      * @return
      */
     static size_t countDigit(int i);
+
+    bool equals(const char* str) const;
+
+    /**
+     * Two String objects are considered equals if their values are equals (_length doesn't matter)
+     * @param str
+     * @return
+     */
+    bool equals(const String& str) const;
 
 };
 
