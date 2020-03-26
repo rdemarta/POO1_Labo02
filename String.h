@@ -104,6 +104,8 @@ private:
      */
     bool equals(const String& str) const;
 
+    void init(size_t length);
+
 };
 
 

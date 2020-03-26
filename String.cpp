@@ -11,53 +11,48 @@
 using namespace std;
 
 String::String() {
-    values = new char[1];
-    values[0] = END_CHAR;
+    init(0);
 }
 
 String::String(const char *str){
-    _length = strlen(str);
-    values = new char[_length + 1];
+    init(strlen(str));
     strcpy(values, str);
 }
 
 String::String(const String& str) {
-    _length = str._length;
-    values = new char[_length + 1];
-    memcpy(values, str.values, _length + 1);
+    init(str._length);
+    strcpy(values, str.values);
 }
 
 String::String(char c) {
-    values = new char[2];
+    init(1);
     values[0] = c;
-    values[1] = END_CHAR;
-    _length = 1;
 }
 
 String::String(int i) {
-    _length = countDigit(i);
-    values = new char[_length];
-
+    init(countDigit(i));
     sprintf(values, "%d", i);
 }
 
 String::String(double d) {
-    _length = countDigit((int)d) + DECIMAL_PRECISION + 1; // +1 is for the char '.'
-    values = new char[_length + 1];
-
+    init(countDigit((int)d) + DECIMAL_PRECISION + 1); // +1 is for the char '.'
     sprintf(values, "%.*f", DECIMAL_PRECISION, d);
 }
 
 String::String(bool b) {
-    _length = b ? 4 : 5;
-    values = new char[_length + 1];
+    init(b ? 4 : 5);
     strcpy(values, b ? "true" : "false");
 }
 
 String::~String() {
-    delete values;
+    delete[] values;
 }
 
+void String::init(size_t length) {
+    _length = length;
+    values = new char[_length + 1];
+    values[_length] = END_CHAR;
+}
 
 size_t String::length() const {
     return _length;
@@ -177,16 +172,16 @@ bool String::equals(const char *str) const {
 String& String::operator=(const String& str) {
     // Both object must be different to do the copy
     if(this != &str) {
-        String newString(str);
-        swap(_length, newString._length);
-        swap(values, newString.values);
+        delete[] values;
+        init(str._length);
+        strcpy(values, str.values);
     }
-
     return *this;
 }
 
 String& String::operator=(const char* str) {
-    return *this = String(str);
+    *this = String(str);
+    return *this;
 }
 
 size_t String::countDigit(int i) {
