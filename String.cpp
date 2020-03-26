@@ -169,7 +169,7 @@ char &String::operator[](size_t index) {
 
 /*********** PRIVATE METHODS **************/
 
-size_t String::countDigit(int i){
+size_t String::countDigit(int i) const{
     size_t count = i <= 0 ? 1 : 0;
 
     while(i) {

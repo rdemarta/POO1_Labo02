@@ -97,7 +97,7 @@ private:
      * @param i
      * @return
      */
-    static size_t countDigit(int i);
+    size_t countDigit(int i) const;
 
     bool equals(const char* str) const;
 
