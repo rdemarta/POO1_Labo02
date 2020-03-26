@@ -49,7 +49,7 @@ public:
      * Get a char* representation of String
      * @return
      */
-    const char* getCharArray() const;
+    const char* c_str() const;
 
     /**
      * Get a reference to the char at position index

@@ -28,7 +28,7 @@ int main() {
     String s6(true);
     String s7(123.456789);
 
-    const char* s2AsConstChar = s2.getCharArray();
+    const char* s2AsConstChar = s2.c_str();
     const char* subStr = s6.subString(1, 2); // "ru"
 
     cout << "Constructors" << endl;

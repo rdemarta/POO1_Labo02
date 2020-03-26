@@ -58,7 +58,7 @@ size_t String::length() const {
     return _length;
 }
 
-const char* String::getCharArray() const {
+const char* String::c_str() const {
     return values;
 }
 
@@ -133,7 +133,7 @@ bool operator!=(const char* lhs, const String& rhs){
 }
 
 String& String::append(const String& str) {
-    return append(str.getCharArray());
+    return append(str.c_str());
 }
 
 String& String::append(const char* str) {
@@ -149,7 +149,7 @@ String& String::append(const char* str) {
 }
 
 bool String::equals(const String &str) const {
-    return equals(str.getCharArray());
+    return equals(str.c_str());
 }
 
 bool String::equals(const char *str) const {
