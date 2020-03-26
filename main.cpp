@@ -11,6 +11,13 @@ using namespace std;
 
 int main() {
 
+    /*String s;
+    cin >> s;
+
+    cout << s << " " << s.length();
+
+    return 0;*/
+
     const char* test = "Blabla";
     const char c = 'c';
     String s1;

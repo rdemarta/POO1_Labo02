@@ -27,7 +27,7 @@ public:
 
     explicit String(const char* str);
 
-    String(const String& str); // TODO ? Had to remove 'explicit' keyword because of operator+()
+    String(const String& str);
 
     explicit String(char c);
 

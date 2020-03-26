@@ -89,12 +89,9 @@ ostream& operator<<(ostream& os, const String& str){
 }
 
 istream& operator>>(std::istream& is, String& str) {
-    cout << "_____gcount" << is.gcount() << endl;
+    is.getline(str.values, 4096); // TODO
+    str._length = (size_t)(is.gcount() - 1);
 
-    // TODO update _length
-
-    is >> str.values;
-    str._length += (size_t)(is.gcount());
     return is;
 }
 
