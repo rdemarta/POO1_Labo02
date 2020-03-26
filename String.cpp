@@ -48,12 +48,6 @@ String::~String() {
     delete[] values;
 }
 
-void String::init(size_t length) {
-    _length = length;
-    values = new char[_length + 1];
-    values[_length] = END_CHAR;
-}
-
 size_t String::length() const {
     return _length;
 }
@@ -148,6 +142,39 @@ String& String::append(const char* str) {
     return *this;
 }
 
+String& String::operator=(const String& str) {
+    // Both object must be different to do the copy
+    if(this != &str) {
+        delete[] values;
+        init(str._length);
+        strcpy(values, str.values);
+    }
+    return *this;
+}
+
+String& String::operator=(const char* str) {
+    *this = String(str);
+    return *this;
+}
+
+String::operator const char *() const {
+    return c_str();
+}
+
+
+/*********** PRIVATE METHODS **************/
+
+size_t String::countDigit(int i) {
+    size_t count = i <= 0 ? 1 : 0;
+
+    while(i) {
+        ++count;
+        i /= 10;
+    }
+
+    return count;
+}
+
 bool String::equals(const String &str) const {
     return equals(str.c_str());
 }
@@ -169,28 +196,8 @@ bool String::equals(const char *str) const {
     return isEqual;
 }
 
-String& String::operator=(const String& str) {
-    // Both object must be different to do the copy
-    if(this != &str) {
-        delete[] values;
-        init(str._length);
-        strcpy(values, str.values);
-    }
-    return *this;
-}
-
-String& String::operator=(const char* str) {
-    *this = String(str);
-    return *this;
-}
-
-size_t String::countDigit(int i) {
-    size_t count = i <= 0 ? 1 : 0;
-
-    while(i) {
-        ++count;
-        i /= 10;
-    }
-
-    return count;
+void String::init(size_t length) {
+    _length = length;
+    values = new char[_length + 1];
+    values[_length] = END_CHAR;
 }

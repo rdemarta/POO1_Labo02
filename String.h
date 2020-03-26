@@ -83,6 +83,9 @@ public:
     bool operator!=(const char* rhs);
     friend bool operator!=(const char* lhs, const String& rhs);
 
+    explicit operator const char*() const;
+
+
     String& append(const String& str);
     String& append(const char* str);
 
