@@ -58,6 +58,7 @@ int main() {
     cout << "s3 (" << s3 << ") += \"END\" : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
 
     // Affectation operator
+    cout << endl << "Affectation operator" << endl;
     s3 = s2;
     s1 = "Nouveau";
     cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;

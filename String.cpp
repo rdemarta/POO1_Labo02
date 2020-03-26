@@ -1,5 +1,5 @@
 /*
- * File     : cstring.cpp
+ * File     : String.cpp
  * Authors  : Robin Demarta, Loïc Dessaules
  * Date     : 12.03.2020
  */
@@ -132,9 +132,8 @@ String& String::append(const String& str) {
 }
 
 String& String::append(const char* str) {
-    _length = this->length() + strlen(str); // Update the length with both String
     char* tmp = values;
-    values = new char[_length + 1]; // Allocate the new values
+    init(this->length() + strlen(str));
 
     // Put all values into values and concat the new str
     strcpy(values, tmp);
@@ -208,7 +207,7 @@ void String::init(size_t length) {
 }
 
 void String::testRange(size_t index) const {
-    if(index < 0 || index >= _length){
+    if(index >= _length){
         throw out_of_range("index out of range");
     }
 

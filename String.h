@@ -1,5 +1,5 @@
 /*
- * File     : cstring.h
+ * File     : String.h
  * Authors  : Robin Demarta, Loïc Dessaules
  * Date     : 12.03.2020
  */
