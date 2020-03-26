@@ -64,7 +64,7 @@ public:
      * @param end
      * @return
      */
-    const char* subString(size_t start, size_t end) const;
+    const char* substr(size_t start, size_t end) const;
 
     String& operator=(const String& str);
     String& operator=(const char* str); // TODO

@@ -61,7 +61,7 @@ char& String::at(size_t index) const{
     return values[index];
 }
 
-const char* String::subString(size_t start, size_t end) const {
+const char* String::substr(size_t start, size_t end) const {
     if(start > end || start >= _length || end >= _length)
         throw out_of_range("start/end bounds are out of range or incoherent.");
 

@@ -29,8 +29,7 @@ int main() {
     String s7(123.456789);
 
     const char* s2AsConstChar = s2.c_str(); // Or : (const char*) s2
-    // const char* s2AsConstChar = (const char*) s2;
-    const char* subStr = s6.subString(1, 2); // "ru"
+    const char* subStr = s6.substr(1, 2); // "ru"
 
     cout << "Constructors" << endl;
     cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
@@ -71,7 +70,8 @@ int main() {
     cout << boolalpha << "\"true\" == s6 (" << s6 << ") ? " << ("true" == s6) << endl;
     cout << boolalpha << "\"true\" != s6 (" << s6 << ") ? " << ("true" != s6) << endl;
 
-    delete subStr;
+    // Dont forgot to delete our sub string
+    delete[] subStr;
 
     return 0;
 }
