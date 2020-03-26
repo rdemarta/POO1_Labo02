@@ -82,6 +82,7 @@ public:
     bool operator!=(const String& rhs);
     bool operator!=(const char* rhs);
     friend bool operator!=(const char* lhs, const String& rhs);
+    char& operator[](size_t index);
 
     explicit operator const char*() const;
 
@@ -108,6 +109,8 @@ private:
     bool equals(const String& str) const;
 
     void init(size_t length);
+
+    void testRange(size_t index) const;
 
 };
 

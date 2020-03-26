@@ -45,7 +45,7 @@ int main() {
     cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
     cout << "s6 substring [1;2] : " << subStr << endl;
 
-    cout << endl << "Modify String with at()" << endl;
+    cout << endl << "Modify String with at() (also possible with [])" << endl;
     char& s2Char = s2.at(0);
     cout << s2 << endl;
     s2Char = 'C';

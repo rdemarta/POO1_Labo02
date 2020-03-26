@@ -57,6 +57,7 @@ const char* String::c_str() const {
 }
 
 char& String::at(size_t index) const{
+    testRange(index);
     return values[index];
 }
 
@@ -161,10 +162,14 @@ String::operator const char *() const {
     return c_str();
 }
 
+char &String::operator[](size_t index) {
+    return at(index);
+}
+
 
 /*********** PRIVATE METHODS **************/
 
-size_t String::countDigit(int i) {
+size_t String::countDigit(int i){
     size_t count = i <= 0 ? 1 : 0;
 
     while(i) {
@@ -200,4 +205,11 @@ void String::init(size_t length) {
     _length = length;
     values = new char[_length + 1];
     values[_length] = END_CHAR;
+}
+
+void String::testRange(size_t index) const {
+    if(index < 0 || index >= _length){
+        throw out_of_range("index out of range");
+    }
+
 }
