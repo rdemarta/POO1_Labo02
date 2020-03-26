@@ -59,6 +59,8 @@ int main() {
 
     // Affectation operator
     s3 = s2;
+    s1 = "Nouveau";
+    cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
 
     cout << endl << "Test == and !=" << endl;
     cout << boolalpha << "s6 (" << s6 << ") == \"false\" ? " << (s6 == "false") << endl;

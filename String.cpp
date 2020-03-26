@@ -185,6 +185,10 @@ String& String::operator=(const String& str) {
     return *this;
 }
 
+String& String::operator=(const char* str) {
+    return *this = String(str);
+}
+
 size_t String::countDigit(int i) {
     size_t count = i <= 0 ? 1 : 0;
 

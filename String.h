@@ -67,6 +67,7 @@ public:
     const char* subString(size_t start, size_t end) const;
 
     String& operator=(const String& str);
+    String& operator=(const char* str); // TODO
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
     friend std::istream& operator>> (std::istream& is, String& str);
