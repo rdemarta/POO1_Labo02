@@ -145,7 +145,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const String& str);
 
     /**
-     * Extract String from input stream
+     * Extract String from input stream, careful that the maximum buffer is CIN_BUFFER (4096)
      * @param is The input stream
      * @param str The String object where the extracted content is stored
      * @return The same as parameter is

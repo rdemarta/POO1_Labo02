@@ -11,12 +11,7 @@ using namespace std;
 
 int main() {
 
-    String s;
-    cin >> s;
-
-    cout << s << " " << s.length();
-
-    return 0;
+    // Tests our String class
 
     const char* test = "Blabla";
     const char c = 'c';
@@ -44,12 +39,14 @@ int main() {
     cout << "s2 as const char* : " << s2AsConstChar << " (" << s2.length() << ")" << endl;
     cout << "s6 substring [1;2] : " << subStr << endl;
 
+    // At and [] operator
     cout << endl << "Modify String with at() (also possible with [])" << endl;
     char& s2Char = s2.at(0);
     cout << s2 << endl;
     s2Char = 'C';
     cout << s2 << endl;
 
+    // Concat and + tests
     cout << endl << "Test concat, +, +=" << endl;
     cout << "s3 (" << s3 << ") append s6 (" << s6 << ") : " << s3.append(s6) << " (" << s3.length() << ")" << endl;
     cout << "s3 (" << s3 << ") += s4 (" << s4 << ") : " << (s3 += s4) << " (" << s3.length() << ")" << endl;
@@ -57,12 +54,13 @@ int main() {
     cout << "s3 (" << s3 << ") + \"Hello\" : " << s3 + "Hello" << " (" << (s3 + "Hello").length() << ")" << endl;
     cout << "s3 (" << s3 << ") += \"END\" : " << (s3 += "END") << " (" << s3.length() << ")" << endl;
 
-    // Affectation operator
-    cout << endl << "Affectation operator" << endl;
+    // Assignment operator
+    cout << endl << "Assignment operator" << endl;
     s3 = s2;
     s1 = "Nouveau";
     cout << "s1 : " << s1 << " (" << s1.length() << ")" << endl;
 
+    // Equality tests
     cout << endl << "Test == and !=" << endl;
     cout << boolalpha << "s6 (" << s6 << ") == \"false\" ? " << (s6 == "false") << endl;
     cout << boolalpha << "s6 (" << s6 << ") != \"false\" ? " << (s6 != "false") << endl;
@@ -70,6 +68,15 @@ int main() {
     cout << boolalpha << "s3 (" << s3 << ") != s2 (" << s2 << ") ? " << (s3 != s2) << endl;
     cout << boolalpha << "\"true\" == s6 (" << s6 << ") ? " << ("true" == s6) << endl;
     cout << boolalpha << "\"true\" != s6 (" << s6 << ") ? " << ("true" != s6) << endl;
+
+    // Test the >> operator
+    cout << endl << "CIN >> operator" << endl;
+    cout << "Veuillez entrer une chaine de caractère (max 4096 caractères) : ";
+    String s;
+    cin >> s;
+
+    cout << "Valeur de s : " << s << " (" << s.length() << ")" << endl;
+
 
     // Dont forgot to delete our sub string
     delete[] subStr;
