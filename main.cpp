@@ -71,14 +71,14 @@ int main() {
 
     // Test the >> operator
     cout << endl << "CIN >> operator" << endl;
-    cout << "Veuillez entrer une chaine de caractère (max 4096 caractères) : ";
+    cout << "Veuillez entrer une chaine de caracteres (max 4096 caracteres) : ";
     String s;
     cin >> s;
 
     cout << "Valeur de s : " << s << " (" << s.length() << ")" << endl;
 
 
-    // Dont forgot to delete our sub string
+    // Don't forget to delete our sub string
     delete[] subStr;
 
     return 0;

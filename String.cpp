@@ -69,7 +69,7 @@ const char* String::substr(size_t start, size_t end) const {
 
     char* subStr = new char[subLength + 1];
     strncpy(subStr, values + start, subLength);
-    subStr[subLength] = END_CHAR; // Must terminate String manually because values' END_CHAR may not be copied (range copy)
+    subStr[subLength] = END_CHAR; // Terminate String manually because values' END_CHAR may not be copied (range copy)
 
     return subStr;
 }
@@ -79,7 +79,6 @@ ostream& operator<<(ostream& os, const String& str){
 }
 
 istream& operator>>(std::istream& is, String& str) {
-
     is.getline(str.values, String::CIN_BUFFER + 1);
     str._length = (size_t)(is.gcount() - 1);
 

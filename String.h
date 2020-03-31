@@ -7,7 +7,6 @@
 #ifndef POO1_LABO02_STRING_H
 #define POO1_LABO02_STRING_H
 
-
 #include <cstdlib>
 #include <iostream>
 
@@ -20,7 +19,7 @@ private:
 
     static const char END_CHAR = '\0';
     static const unsigned DECIMAL_PRECISION = 6;
-    static const size_t CIN_BUFFER = 4096; // Maximum of 4096 char can be stored
+    static const size_t CIN_BUFFER = 4096; // Maximum of 4096 char can be stored through istream
 
 public:
 
@@ -46,14 +45,14 @@ public:
 
     /**
      * From char
-     * Consructs from character
+     * Constructs from character
      * @param c The character
      */
     explicit String(char c);
 
     /**
      * From int
-     * Consructs from integer
+     * Constructs from integer
      * @param i The integer
      */
     explicit String(int i);
@@ -90,7 +89,7 @@ public:
     const char* c_str() const;
 
     /**
-     * Cast a String object into a c-string value like that : (const char *) myString
+     * Cast a String object into a c-string value like so : (const char *) myString
      * @return A const char* cast of our String object
      */
     explicit operator const char*() const;
@@ -104,7 +103,7 @@ public:
     char& at(size_t index) const;
 
     /**
-     * Get a reference to the char at position index (use the at method)
+     * Get a reference to the char at position index (using the at method)
      * @param index The position of our String we want to access
      * @return A reference on the char at position [index]
      * @throw out_of_range if the index is out of range
