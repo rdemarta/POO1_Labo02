@@ -20,6 +20,7 @@ private:
 
     static const char END_CHAR = '\0';
     static const unsigned DECIMAL_PRECISION = 6;
+    static const size_t CIN_BUFFER = 4096; // Maximum of 4096 char can be stored
 
 public:
 
